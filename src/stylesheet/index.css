@@ -141,7 +141,7 @@ header h1 {
 
 .projects-container .row .card h3 {
     font-size: var(--app-main-font-size);
-    font-weight: 600;
+    font-weight: 700;
     color: var(--app-blue);
 }
 
