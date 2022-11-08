@@ -143,6 +143,7 @@ header h1 {
     font-size: var(--app-main-font-size);
     font-weight: 700;
     color: var(--app-blue);
+    text-transform: uppercase;
 }
 
 .projects-container .row .card p {
