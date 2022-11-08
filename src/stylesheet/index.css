@@ -1,0 +1,219 @@
+@import "./reset.css";
+
+:root {
+    --app-dark-grey-bg:#2c2d33;
+    --app-dark-bg:#131313;
+    --app-light-bg:#e0e0e0;
+    --app-light-text-color:rgb(244, 246, 248);
+    --app-red:#ff3c57;
+    --app-green:#46737C;
+    --app-purple:#833cff;
+    --app-orange:#ff833c;
+    --app-blue:#2B50B3;
+    --app-btn-height: 46px;
+    --app-btn-width: 100%;
+    --app-light-text-color: #f4f6f8;
+    --app-dark-text-color: #1c1c1c;
+
+    --app-letter-spacing: 0.2px;
+    --app-header-line-height: 56px;
+    --app-text-line-height: 50px;
+    --app-h2-font-size: 17px;
+    --app-p-font-size: 14px;
+}
+    
+body {
+    background: var(--app-dark-bg);
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+/**************************************************/
+/*****       Main                            ******/
+/**************************************************/
+
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+/**************************************************/
+/*****      HEADER                           ******/
+/**************************************************/
+
+header {
+    background-color: var(--app-dark-grey-bg);
+    line-height: var(--app-header-line-height);
+    height: 56px;
+}
+
+header h1 {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--app-light-text-color);
+}
+
+/* Show reular nav menu when screen width is 923px and above */
+@media only screen and (min-width: 923px) { 
+
+    .burger-menu i {
+        display: none;
+    }
+    
+    nav ul {
+        list-style: none;
+    }
+    
+    nav ul li {
+        display: inline;
+    }
+    
+    nav ul li + li {
+        margin-left: 18px;
+    }
+    
+    nav ul li a {
+        font-size: var(--app-main-font-size);
+        font-weight: 600;
+        letter-spacing: var(--app-letter-spcaing);
+        cursor: pointer;
+        transition: color 0.25s ease-in-out;
+        text-decoration: none;
+        color: var(--app-light-text-color);
+    }
+    
+    nav ul li a:hover {
+        border-bottom: 1px solid var(--app-light-text-color);
+    }
+}
+
+/* Show hamburger icon when screen width is below 922px */
+@media only screen and (max-width: 922px) {
+    nav {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+        color: var(--app-purple);
+        font-size: 17px;
+        line-height:  var(--page-header-line-height);
+    }
+    
+    .burger-menu:hover {
+        display: block;
+        color: var(--app-purple);
+    }
+}
+
+/**************************************************/
+/*****      MAIN                             ******/
+/**************************************************/
+
+.projects-container {
+    text-align: center;
+}
+
+.projects-container h2 {
+    margin: 40px 0px;
+    color: var(--app-light-text-color);
+}
+
+.projects-container .row {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+}
+
+.projects-container .row .card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border-radius: 5px;
+    background-color: var(--app-light-text-color);
+    box-shadow: 0 20px 48px 0 var(--app-shadow-color);
+    transition: transform 450ms;
+    padding: 20px;
+}
+
+.projects-container .row .card h3 {
+    font-size: var(--app-main-font-size);
+    font-weight: 600;
+    color: var(--app-blue);
+}
+
+.projects-container .row .card p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--app-dark-grey-bg);
+}
+
+.projects-container .row .card:hover {
+    transform: translateY(-10px);
+}
+
+.projects-container .row .card div.top p{
+    margin: 10px 0 20px 0;
+}
+
+.projects-container .row .card div.top p span{
+    font-size: 10px;
+    color: var(--app-dark-text-color);
+}
+
+.projects-container .row .card div.top {
+    flex: 1;
+}
+  
+.projects-container .row .card div.down {
+    flex: none;
+    text-align: center;
+}
+
+.card-btn { 
+    display: inline-block;
+    border-radius: 5px;    
+    text-align: center;
+    width: 100px;
+    background-color: var(--app-green);
+    margin-top: 10px;
+    padding: 5px 10px; 
+    transition: background-color 0.25s ease-in-out;   
+}
+
+.card-btn a {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--app-light-text-color);
+    text-decoration: none;
+}
+
+.card-btn:hover { 
+    background-color: var(--app-blue);
+    cursor: pointer;
+    color: var(--app-light-text-color);
+}
+
+/* flex project cards with screen width 800px and up */
+@media (min-width: 801px) {
+    .projects-container .row .card {
+        width: calc(25% - 15px);
+    }
+}
+
+/* flex project cards with screen width 801px and down */
+@media (max-width: 800px) {
+    .projects-container .row .card {
+        width: calc(50% - 10px);
+    }
+}
+
+/* flex project cards with screen width 480px and down */
+@media (max-width: 480px) {
+    .projects-container .row .card {
+        width: 100%;
+    }
+}
